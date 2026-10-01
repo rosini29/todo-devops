@@ -8,6 +8,10 @@ export default function Home() {
     { id: 3, text: "Setup Git repository", done: true },
   ]);
   const [input, setInput] = useState("");
+  const addTask = () => {
+  setTasks([...tasks, { id: Date.now(), text: input, done: false }]);
+  setInput("");
+};
 
   return (
     <main style={{ maxWidth: 500, margin: "40px auto", fontFamily: "sans-serif" }}>
@@ -17,7 +21,7 @@ export default function Home() {
         onChange={(e) => setInput(e.target.value)}
         placeholder="Enter a task..."
       />
-      <button>Add Task</button>
+      <button onClick={addTask}>Add Task</button>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {tasks.map((t) => (
           <li key={t.id}>
