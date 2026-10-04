@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <main style={{ maxWidth: 500, margin: "40px auto", fontFamily: "sans-serif" }}>
-      <h1>My ToDo App</h1>
+      <h1>My ToDo App — Version 1.1 Development</h1>
       <input
         value={input}
         onChange={(e) => setInput(e.target.value)}
