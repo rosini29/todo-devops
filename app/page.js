@@ -9,7 +9,8 @@ export default function Home() {
   ]);
   const [input, setInput] = useState("");
   const addTask = () => {
-  setTasks([...tasks, { id: Date.now(), text: input, done: false }]);
+  if (input.trim() === "") return;
+  setTasks([...tasks, { id: Date.now(), text: input.trim(), done: false }]);
   setInput("");
 };
 
